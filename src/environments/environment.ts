@@ -5,4 +5,8 @@
 
 export const environment = {
   production: false
+
+    // Url Settings
+  apiUrl: 'http://localhost:3000/'
+
 };
