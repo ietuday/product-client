@@ -1,0 +1,70 @@
+<form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)" class="registerForm">
+
+    <h1>Registration Form</h1>
+    <div style="margin: 10px 0px">
+        <div>
+            <div>
+                First Name *:
+            </div>
+            <div>
+                <input type="text" formControlName="firstname" placeholder="Required" />
+            </div>
+            <div>
+                <div *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty">
+                    <i class="fa fa-close"></i> Firstname is required
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div>
+            <div>
+                Last Name *:
+            </div>
+            <div>
+                <input type="text" formControlName="lastname" placeholder="Required" />
+            </div>
+            <div>
+                <div *ngIf="!userform.controls['lastname'].valid&&userform.controls['lastname'].dirty">
+                    <i class="fa fa-close"></i> Lastname is required
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div>
+            <div>
+                Email*:
+            </div>
+            <div>
+                <input type="email" formControlName="email" placeholder="Required" email/>
+            </div>
+            <div>
+                <div *ngIf="!userform.controls['email'].valid&&userform.controls['email'].dirty">
+                    <i class="fa fa-close"></i> Please enter valid email
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div>
+            <div>
+                Password *:
+            </div>
+            <div>
+
+                <input type="password" formControlName="password" placeholder="Required">
+
+            </div>
+            <div>
+                <div *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty">
+                    <i class="fa fa-close"></i>
+                    <span *ngIf="userform.controls['password'].errors['required']">Password is required</span>
+                </div>
+            </div>
+        </div>
+        <br/><br/>
+        <div>
+            <button type="submit" label="Submit" [disabled]="!userform.valid">Submit</button>
+            <button type="reset" label="reset" (click)="onReset()">Reset</button>
+        </div>
+
+    </div>
+</form>

@@ -13,7 +13,7 @@ export class AppComponent {
   testData:Array<Data> = new Array<Data>();
 
   constructor(private testService: TestService){
-    this.data();
+    // this.data();
   }
 
   data(){
