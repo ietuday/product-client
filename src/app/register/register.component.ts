@@ -28,10 +28,9 @@ export class RegisterComponent implements OnInit{
   
   onSubmit(value: any){
       this.submitted =true;
-      console.log("userform",this.userform)
-      console.log("Submiited Data : ",value);
       this.user = value;
-      console.log(this.user);
+      this.user.password = window.btoa(this.user.password)
+      console.log("Inside Submit:UserData",this.user);
       this.testService.registerUser(this.user);
     }
 

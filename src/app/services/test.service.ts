@@ -27,6 +27,7 @@ export class TestService {
 
 registerUser(user: User){
   console.log("Useer",user);
+ 
   let body = JSON.stringify(user);
   console.log(body);
   let headers = new Headers();
@@ -36,13 +37,6 @@ registerUser(user: User){
             console.log(data.json());           
         }
     );
-    
-
-//   this.http.post(this.url, body, { headers }).subscribe(
-//     data => {
-//         console.log(data.json());           
-//     }
-// );
 }
 
 
